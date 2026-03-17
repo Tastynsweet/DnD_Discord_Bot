@@ -2,6 +2,10 @@ import discord
 from discord.ext import commands, tasks
 from discord.ui import Button, View
 import datetime
+import os
+from dotenv import load_dotenv
+
+load_dotenv("key.env")
 
 class PollView(View):
     def __init__(self):
@@ -68,4 +72,4 @@ async def weekly_poll():
         print("Poll sent.")
 
 # --- Run Bot ---
-bot.run("MTQxMjI2MTY3NzQzNjUwMjE1Ng.GMv0Kj.ySSY3yGGjpZj774bp9CdNLVtPbtmIAIKsCruA8")
+bot.run(os.getenv("DISCORD_TOKEN"))
